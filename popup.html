@@ -1,33 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<div>
-  <body>
-    <div class="extensionName"><h2>DaLazzyHackers</h2></div>
-
-    <div class="shield settings">
-      <h2>Shield</h2>
-      <div class="status">
-        <label class="switch">
-        <input id="shieldId" type="checkbox" checked>
-        <span  class="slider round"></span>
-      </label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body style="width: 200px; margin: 0; border-radius: 20px">
+    <div class="popup-title" align="center">
+      <div class="popup-title-inner" align="center">
+        <h1 style="margin: 0">EpilepsyShield</h1>
       </div>
     </div>
-    <div class="overlay settings">
-      <h2 >Overlay</h2>
-      <div class="status">
-        <label class="switch">
-        <input id="overlayId" type="checkbox" checked>
-        <span  class="slider round"></span>
-        </label>
-      </div>
+    <div class="popup-settings" align="center">
+        <label for="statusCheckbox" class="popup-label"
+        >Shield &nbsp<b id="seizafeStatus"></b
+      ></label>
+      <input id="statusCheckbox" type="checkbox" class="switch" />
+      <br></br>
+      <label for="overlayCheckbox" class="popup-label"
+        >Overlay<b id="overlay-title"></b
+      ></label>
+      <input id="overlayId" type="checkbox" class="switch"/>
     </div>
+    <div id="version" align="right"></div>
   </body>
-</div>
-</html>
+  <script src="popup.js"></script>
+</html> 
