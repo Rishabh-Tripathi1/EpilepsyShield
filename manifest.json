@@ -12,7 +12,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*", "https://twitter.com/*" , "*:/https://facebook.com/*", "http://127.0.0.1/*"],
+      "matches": ["<all_urls>"],
       "js": ["content.js", "popup.js"],
       "css": ["content.css", "popup.css"]
     }
