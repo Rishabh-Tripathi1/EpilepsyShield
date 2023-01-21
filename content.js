@@ -35,6 +35,7 @@ fetch("http://127.0.0.1:5000/check", {
     res.json().then((json) => {
       console.log(json);
       intervals = json.intervals;
+      alert("Video is ready to play")
     });
   });
 });
