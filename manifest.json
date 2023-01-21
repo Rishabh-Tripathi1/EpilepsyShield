@@ -1,0 +1,34 @@
+{
+    "update_url": "https://clients2.google.com/service/update2/crx",
+
+    "name":"EpilepsyShield",
+    "description":"An extension to prevent Photosensitive Epileptic seizures while watching YouTube videos by hiding them with an overlay.",
+    "version":"0.0.0.1",
+    "manifest_version": 2,
+    "icons":{
+        "16": "icon16.png", 
+        "48": "icon48.png", 
+        "128": "icon128.png"
+    },
+    "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "http://127.0.0.1:5000/check",
+    "tabs",
+    "activeTab"
+  ],
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["content.js","popup.js"],
+            "css":["content.css","popup.css"]
+        }
+    ],
+    "browser_action":
+        {
+            "default_title":"EpilepsyShield",
+            "default_popup":"popup.html"
+        },
+    "permissions":["tabs","storage"],
+    "web_accessible_resources":["index.js"]
+}

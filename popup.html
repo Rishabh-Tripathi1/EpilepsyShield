@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body style="width: 200px; margin: 0; border-radius: 20px">
+    <div class="popup-title" align="center">
+      <div class="popup-title-inner" align="center">
+        <h1 style="margin: 0">EpilepsyShield</h1>
+      </div>
+    </div>
+    <div class="popup-settings" align="center">
+        <label for="statusCheckbox" class="popup-label"
+        >Shield &nbsp<b id="seizafeStatus"></b
+      ></label>
+      <input id="statusCheckbox" type="checkbox" class="switch" />
+      <br></br>
+      <label for="overlayCheckbox" class="popup-label"
+        >Overlay<b id="overlay-title"></b
+      ></label>
+      <input id="overlayId" type="checkbox" class="switch"/>
+    </div>
+    <div id="version" align="center" style="padding-bottom: 5px;">
+      <button id="vidButton" class="vidButton">Scan Video</button>
+    </div>
+  </body>
+  <script src="popup.js"></script>
+</html> 
