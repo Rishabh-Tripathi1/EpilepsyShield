@@ -10,6 +10,8 @@ let video = document.querySelector('.video-stream.html5-main-video');
 var counter = 0;
 var coutner2 = 0;
 let lower = document.querySelector('.ytp-chrome-bottom');
+var skip_frames = true;
+var overlay_active = false;
 var hidden, visibilityChange;
 if (typeof document.hidden !== 'undefined') {
   hidden = 'hidden';
@@ -35,7 +37,7 @@ fetch("http://127.0.0.1:5000/check", {
     res.json().then((json) => {
       console.log(json);
       intervals = json.intervals;
-      alert("Video is ready to play")
+      alert("Video is ready to play");
     });
   });
 });
@@ -43,24 +45,38 @@ fetch("http://127.0.0.1:5000/check", {
 let intervals = [];
 let goto = 0;
 
+
+
 setInterval(function (request) {
   console.log(intervals);
   var video = document.getElementsByTagName("video")[0];
   if (video) {
     let time = video.currentTime;
     for (let i = 0; i < intervals.length; i++) {
+      if(time===intervals[0][0]){
+        DisplaySeizafeWarning();
+      }
       if (time >= intervals[i][0]-1 && time < intervals[i][1]) {
+        if(skip_frames){
         goto = intervals[i][1];
-        intervals.shift();
 
         //continueScript();
         video.currentTime = goto;
+        } else {
+          if(!overlay_active){
+            overlay();
+            overlay_active=true;
+          }
+        }
         console.log("here");
         break;
+      }else if(time===intervals[i][1]&&(!skip_frames)&&overlay_active){
+        overlayoff();
       }
     }
   }
 }, 1000);
+
 
 function cloudwalkerModeOn() {
   cloudwalkerMode = 1;
@@ -156,6 +172,7 @@ function DisplaySeizafeWarning() {
         if (document.getElementById('s1').checked == true) {
           warnagain = 0;
           window.setTimeout(hideSeizafe, 800);
+          skip_frames=true;
         } else if (document.getElementById('s1').checked == false) {
           warnagain = 1;
           window.setTimeout(hideSeizafe, 800);
@@ -185,11 +202,14 @@ function overlay(){
       );
       document.querySelector('.video-stream.html5-main-video').play();
       counter = 1;
+      overlay_active=true;
+      skip_frames=false;
   }
 }
 
 function overlayoff(){
   removeElementsByClass('overlay2');
+  overlay_active=false;
 }
 
 function drawSeizafeCanvas() {
