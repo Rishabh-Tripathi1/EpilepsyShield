@@ -1,4 +1,4 @@
-## <i>Hackanova_DaLazzyyHackers</i>
+
 # Problem Statement
 Epilepsy is a disorder that affects the central nervous system, causing seizures and loss of awareness for a period of time. There are certain types of epileptic seizures which can be triggered by different day to day elements. One such kinds is <b>Photosensitive Epilepsy</b>.
 
