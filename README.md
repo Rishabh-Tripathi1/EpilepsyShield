@@ -34,7 +34,7 @@ EpilepsyShield is currently only available for download from the GitHub. Follow 
 
 1. Open your Chrome web browser. 🌐
 
-2. Navigate to the [EpilepsyShield extension page](https://github.com/Rishabh-Tripathi1/EpilepsyShield). 🛡️
+2. Navigate to the [EpilepsyShield Github Repo](https://github.com/Rishabh-Tripathi1/EpilepsyShield). 🛡️
 
 3. Click the "Add to Chrome" button. ➕
 
